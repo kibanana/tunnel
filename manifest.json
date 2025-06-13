@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Timer - Stay in the Flow",
+  "version": "1.0",
+  "description": "Block tab switching for selected durations to help you stay focused and productive.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Focus Timer"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
